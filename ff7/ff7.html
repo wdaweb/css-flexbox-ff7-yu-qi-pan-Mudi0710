@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 400;
+    }
+
+    body {
+      width: 1920px;
+      height: 943px;
+    }
+
+    #container {
+      width: 100%;
+      height: 100%;
+      /* https://ithelp.ithome.com.tw/articles/10248148 */
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), url('./images/bg-full.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #content {
+      width: 75%;
+      height: 75%;
+      background: #000;
+      border: 1px solid gray;
+      display: flex;
+    }
+
+    #left {
+      width: 50%;
+      height: 100%;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('./images/main.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #left-content {
+      width: 80%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      color: white;
+      font-size: 1.3rem;
+      line-height: 1.3;
+    }
+
+
+    #left img {
+      width: 38%;
+      margin-bottom: 1rem;
+    }
+
+    #left-content p {
+      text-align: center;
+    }
+
+    #right {
+      width: 50%;
+      height: 100%;
+    }
+
+    #top {
+      width: 100%;
+      height: 50%;
+      background: gray;
+      padding-top: 2rem;
+    }
+
+    #top-content {
+      width: 100%;
+      height: 100%;
+      background-image: url('./images/cloud.png');
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: contain;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding-left: 2.5rem;
+      padding-top: 2rem;
+    }
+
+    #top-content h1 {
+      width: 65%;
+      font-size: 3rem;
+    }
+
+    #top-content p {
+      width: 65%;
+      font-size: 1.2rem;
+    }
+
+
+    #bottom {
+      width: 100%;
+      height: 50%;
+      background: #000;
+      padding-top: 2rem;
+      padding-left: 1rem;
+    }
+
+    #bottom-content {
+      width: 100%;
+      height: 100%;
+      background-image: url('./images/tifa.png');
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: contain;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+      padding-right: 1rem;
+      padding-top: 2rem;
+      color: white;
+    }
+
+    #bottom-content h1 {
+      width: 65%;
+      font-size: 3rem;
+    }
+
+    #bottom-content p {
+      width: 65%;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="content">
+      <div id="left">
+        <div id="left-content">
+          <img src="./images/ps4-ff7.png">
+          <h1>AVALIABLE NOW</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolores quam, illum velit deleniti
+            accusamus ipsam. Temporibus aperiam officia numquam ullam rerum deleniti inventore dolor!</p>
+        </div>
+      </div>
+      <div id="right">
+        <div id="top">
+          <div id="top-content">
+            <h1>Cloud</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eos vel ea nesciunt itaque mollitia neque
+              cupiditate ipsum quae pariatur impedit unde natus cum labore expedita quisquam, consectetur doloremque
+              doloribus?</p>
+          </div>
+        </div>
+        <div id="bottom">
+          <div id="bottom-content">
+            <h1>Tifa</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eos vel ea nesciunt itaque mollitia neque
+              cupiditate ipsum quae pariatur impedit unde natus cum labore expedita quisquam, consectetur doloremque
+              doloribus?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

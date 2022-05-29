@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+      font-family: '標楷體';
+      font-weight: 500;
+    }
+
+    #container {
+      width: 1853px;
+      height: 942px;
+      border: 1px solid #000;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #lefttext {
+      width: 5%;
+      height: 90%;
+      background: blue;
+    }
+
+    #chessboard {
+      width: 40%;
+      height: 90%;
+      border: 1px solid #000;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #chessboard .black,
+    #chessboard .red {
+      width: 100%;
+      height: 40%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    #chessboard .black .board,
+    #chessboard .red .board {
+      width: 80px;
+      height: 80px;
+      border: 1px solid #000;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #chessboard .black .board:nth-child(4),
+    #chessboard .black .board:nth-child(13),
+    #chessboard .red .board:nth-child(20),
+    #chessboard .red .board:nth-child(29) {
+      background: linear-gradient(45deg, white 49%, black 50%, white 51%);
+    }
+
+    #chessboard .black .board:nth-child(5),
+    #chessboard .black .board:nth-child(12),
+    #chessboard .red .board:nth-child(21),
+    #chessboard .red .board:nth-child(28) {
+      background: linear-gradient(135deg, white 49%, black 50%, white 51%);
+    }
+
+    #chessboard .river {
+      width: 640px;
+      height: 10%;
+      border: 1px solid #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 7rem;
+      font-size: 1.5rem;
+    }
+
+    /* #chessboard .chess {
+      border-radius: 50%;
+    } */
+
+    #righttext {
+      width: 5%;
+      height: 90%;
+      background: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="lefttext"></div>
+    <div id="chessboard">
+      <div class="black"></div>
+      <div class="river">
+        <h1>楚河</h1>
+        <h1>漢界</h1>
+      </div>
+      <div class="red"></div>
+    </div>
+    <div id="righttext"></div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
+    integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=='
+    crossorigin='anonymous'></script>
+
+  <script>
+    for (let i = 1; i <= 32; i++) {
+      $('.black').append(`
+      <div class="board"></div>`)
+      $('.red').append(`
+      <div class="board"></div>`)
+    }
+
+  </script>
+
+</body>
+
+</html>

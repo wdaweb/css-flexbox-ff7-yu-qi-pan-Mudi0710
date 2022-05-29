@@ -27,12 +27,17 @@
       align-items: center;
     }
 
+    /* 左邊文字 */
     #lefttext {
       width: 5%;
-      height: 90%;
-      background: blue;
+      height: 95%;
+      font-size: 2.7rem;
+      writing-mode: vertical-rl;
+      text-align: center;
+      line-height: 92.5px;
     }
 
+    /* 棋盤基底 */
     #chessboard {
       width: 40%;
       height: 90%;
@@ -42,8 +47,10 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      position: relative;
     }
 
+    /* 黑、紅棋盤分佈 */
     #chessboard .black,
     #chessboard .red {
       width: 100%;
@@ -53,9 +60,9 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      position: relative;
     }
 
+    /* 畫黑、紅棋盤格子 */
     #chessboard .black .board,
     #chessboard .red .board {
       width: 80px;
@@ -65,6 +72,7 @@
       flex-direction: column;
     }
 
+    /* 畫 ／ 斜線 */
     #chessboard .black .board:nth-child(4),
     #chessboard .black .board:nth-child(13),
     #chessboard .red .board:nth-child(20),
@@ -72,6 +80,7 @@
       background: linear-gradient(45deg, white 49%, black 50%, white 51%);
     }
 
+    /* 畫 ＼ 斜線 */
     #chessboard .black .board:nth-child(5),
     #chessboard .black .board:nth-child(12),
     #chessboard .red .board:nth-child(21),
@@ -79,6 +88,7 @@
       background: linear-gradient(135deg, white 49%, black 50%, white 51%);
     }
 
+    /* 楚河漢界 */
     #chessboard .river {
       width: 640px;
       height: 10%;
@@ -90,21 +100,108 @@
       font-size: 1.5rem;
     }
 
-    /* #chessboard .chess {
-      border-radius: 50%;
-    } */
+    /* 棋子基底 */
+    #chesses {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
 
+    /* 棋子內容區 */
+    #chesses .row .col {
+      width: 100%;
+      height: 80px;
+      padding: 0 1%;
+      display: flex;
+      align-items: center;
+    }
+
+    /* 9顆棋子間距 */
+    .nine-chess {
+      justify-content: space-around;
+    }
+
+    /* 2顆棋子間距 */
+    #chesses .row .two-chess {
+      justify-content: space-around;
+      padding: 0 6.5%;
+    }
+
+    /* 5顆棋子間距 */
+    #chesses .row .five-chess {
+      justify-content: space-between;
+      padding: 0 2%;
+    }
+
+    /* 第一行棋子定位 */
+    #chesses .row:nth-child(1) .col {
+      position: absolute;
+      top: 3%;
+    }
+
+    /* 第二行棋子定位 */
+    #chesses .row:nth-child(2) .col {
+      position: absolute;
+      top: 22%;
+    }
+
+    /* 第三行棋子定位 */
+    #chesses .row:nth-child(3) .col {
+      position: absolute;
+      top: 31%;
+    }
+
+    /* 第四行棋子定位 */
+    #chesses .row:nth-child(4) .col {
+      position: absolute;
+      bottom: 31%;
+    }
+
+    /* 第五行棋子定位 */
+    #chesses .row:nth-child(5) .col {
+      position: absolute;
+      bottom: 22%;
+    }
+
+    /* 第六行棋子定位 */
+    #chesses .row:nth-child(6) .col {
+      position: absolute;
+      bottom: 3%;
+    }
+
+    /* 棋子 */
+    #chesses .col .chess {
+      width: 70px;
+      height: 70px;
+      border: 1px solid #000;
+      border-radius: 50%;
+      background: #FFF;
+      font-size: 3rem;
+      text-align: center;
+      line-height: 70px;
+    }
+
+    .red-chess {
+      color: red;
+    }
+
+    /* 右邊文字 */
     #righttext {
       width: 5%;
-      height: 90%;
-      background: yellow;
+      height: 95%;
+      font-size: 2.7rem;
+      writing-mode: vertical-rl;
+      text-align: center;
+      line-height: 92.5px;
     }
   </style>
 </head>
 
 <body>
   <div id="container">
-    <div id="lefttext"></div>
+    <div id="lefttext">
+      <p>棋盤內，車無輪，馬無韁，叫聲將軍提防提防</p>
+    </div>
     <div id="chessboard">
       <div class="black"></div>
       <div class="river">
@@ -112,8 +209,69 @@
         <h1>漢界</h1>
       </div>
       <div class="red"></div>
+      <div id="chesses">
+        <div class="row">
+          <div class="col nine-chess">
+            <div class="chess">車</div>
+            <div class="chess">馬</div>
+            <div class="chess">象</div>
+            <div class="chess">士</div>
+            <div class="chess">將</div>
+            <div class="chess">士</div>
+            <div class="chess">象</div>
+            <div class="chess">馬</div>
+            <div class="chess">車</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col two-chess">
+            <div class="chess">包</div>
+            <div class="chess">包</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col five-chess ">
+            <div class="chess">卒</div>
+            <div class="chess">卒</div>
+            <div class="chess">卒</div>
+            <div class="chess">卒</div>
+            <div class="chess">卒</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col five-chess red-chess">
+            <div class="chess">兵</div>
+            <div class="chess">兵</div>
+            <div class="chess">兵</div>
+            <div class="chess">兵</div>
+            <div class="chess">兵</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col two-chess red-chess">
+            <div class="chess">炮</div>
+            <div class="chess">炮</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col nine-chess red-chess">
+            <div class="chess">俥</div>
+            <div class="chess">傌</div>
+            <div class="chess">相</div>
+            <div class="chess">仕</div>
+            <div class="chess">帥</div>
+            <div class="chess">仕</div>
+            <div class="chess">相</div>
+            <div class="chess">傌</div>
+            <div class="chess">俥</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="righttext"></div>
+    <div id="righttext">
+      <p>圖畫裡，龍不吟，虎不嘯，小小書僮可笑可笑</p>
+    </div>
+  </div>
   </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
